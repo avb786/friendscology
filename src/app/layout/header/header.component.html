@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-md navbar-light bg-dark text-white">
+    <a href="#" class="navbar-brand">
+        <img src="../../../assets/friendsology.PNG" style="width: 125px;
+        height: 70px;" alt="CoolBrand">
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-white" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a href="#" class="nav-item text-white nav-link active">Home</a>
+            <a href="#" *ngIf="email" class="nav-item nav-link text-white">Profile</a>
+            <a href="#" *ngIf="email" class="nav-item nav-link text-white">Messages</a>
+        </div>
+        <div class="navbar-nav ml-auto ">
+            <a *ngIf="!email" href="#" class="nav-item text-white nav-link" [routerLink]="['/signin']">Sign In</a>
+            <a *ngIf="!email" href="#" class="nav-item text-white nav-link" [routerLink]="['/signup']">Sign Up</a>
+            <a *ngIf="email" href="#" class="nav-item text-white nav-link" [routerLink]="['/']" >{{email}}</a>
+            <a *ngIf="email" href="#" class="nav-item text-white nav-link" (click)="handleSignOut()" [routerLink]="['/']" >Logout</a>
+            <a *ngIf="email" href="#" class="nav-item text-white nav-link btn btn-primary" [routerLink]="['/addpost']" >Add Post</a>
+
+
+        </div>
+    </div>
+</nav>
